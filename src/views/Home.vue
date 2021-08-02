@@ -8,7 +8,7 @@
         Тег video не поддерживается вашим браузером. 
       </video>
 
-      <img class="home_main_img" id="home_main_img" src="../assets/main.png" alt="">
+      <img class="home_main_img" id="home_main_img" src="../assets/image3.png" alt="">
 
       <p v-scroll-to="{el: '#about',  offset: -100,}" class="home_1">a</p>
       <a href="/vacancies" class="home_2">a</a>
@@ -28,7 +28,7 @@
       <div class="about_text">
         <div class="about_text_1">
           <p>Качественное трудоустройство моряков на суда торгового флота</p>
-          <img src="../assets/captain.png" alt="">
+          <img src="../assets/image2.png" alt="">
           <strong>„У моряка нет трудного или легкого пути, есть только один путь — славный.“</strong>
           <h2>Павел Нахимов</h2>
         </div>
@@ -48,7 +48,7 @@
          <h1>Обучение.</h1>
          <div class="education_info_text">
            <p>Одним из ключевых преимуществ работы с нашей компанией является качественное обучение. Перед приемом на работу вы сможете успешно завершить несколько курсов подготовки, улучшив собственные знания и навыки.</p>
-           <p>Для ознакомления с текущим списком активных курсов свяжитесь с нами по телефону: наш HR-менеджер с удовольствием проконсультирует вас по вопросам обучения.</p>
+           <p style="margin-bottom: 38px;">Для ознакомления с текущим списком активных курсов свяжитесь с нами по телефону: наш HR-менеджер с удовольствием проконсультирует вас по вопросам обучения.</p>
             <v-btn
             depressed
             color="primary"
@@ -61,7 +61,7 @@
 
       </div>
 
-      <img src="../assets/tower.png" alt="">
+      <img src="../assets/image1.png" alt="">
     </div>
 
     <div class="vac">
@@ -323,6 +323,13 @@ export default {
       this.playVideo()
     }, 2500)
 
+    setTimeout(()=>{
+      let inputs = document.querySelectorAll(".v-input input")
+      for(let item of inputs){
+        item.style.maxHeight = '37px'
+      }
+    }, 1000)
+
     document.querySelector("#video_1").play()
   },
   mounted(){
@@ -477,7 +484,7 @@ export default {
       width: 34%;
       position: relative;
       height: max-content;
-      top: -25vw;
+      top: -20vw;
       z-index: 3;
       p{
         font-style: normal;
@@ -491,7 +498,9 @@ export default {
         color: #C0C0C0;
       }
       img{
-        width: 100%;
+        width: 28vw; //520px;
+        height: 31vw; //568px;
+        object-fit: cover;
         font-family: "Montserrat", sans-serif !important;
       }
       strong{
@@ -567,6 +576,19 @@ export default {
       color: #FFFFFF;
       margin-top: 1%;
     }
+    button{
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 20px;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 0px;
+      font-size: 0.9vw;
+      font-style: normal;
+      line-height: 15px;
+      text-align: center;
+      color: #FFFFFF;
+      width: 17vw;
+      height: 2.5vw;
+    }
     .education_info_text{
       background: #FFFFFF;
       font-family: "Montserrat", sans-serif !important;
@@ -580,8 +602,8 @@ export default {
         font-style: normal;
         font-weight: normal;
         font-family: "Montserrat", sans-serif !important;
-        font-size: 1.36vw; //20px;
-        line-height: 1.98vw; //27px;
+        font-size: 1.26vw; //20px;
+        line-height: 1.78vw; //27px;
 
         color: #000000
       }
